@@ -17,6 +17,7 @@ module.exports = {
     assetModuleFilename: 'assets/images/[hash][ext][query]'
   },
   mode: 'development',
+  watch: true,
   resolve: {
     // Aqui ponemos las extensiones que tendremos en nuestro proyecto para webpack los lea
     extensions: ['.js'],
