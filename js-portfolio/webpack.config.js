@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const DotEnv = require('dotenv-webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   // Entry nos permite decir el punto de entrada de nuestra aplicación
@@ -82,7 +83,8 @@ module.exports = {
         }
       ]
     }),
-    new DotEnv()
+    new DotEnv(),
+    new CleanWebpackPlugin()
   ],
   optimization: {
     minimize: true,
