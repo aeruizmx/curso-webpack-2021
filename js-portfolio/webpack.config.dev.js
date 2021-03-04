@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const DotEnv = require('dotenv-webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
 
 module.exports = {
   // Entry nos permite decir el punto de entrada de nuestra aplicación
@@ -18,6 +18,7 @@ module.exports = {
     assetModuleFilename: 'assets/images/[hash][ext][query]'
   },
   mode: 'development',
+  devtool: 'source-map',
   // watch: true,
   resolve: {
     // Aqui ponemos las extensiones que tendremos en nuestro proyecto para webpack los lea
@@ -84,7 +85,7 @@ module.exports = {
       ]
     }),
     new DotEnv(),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
